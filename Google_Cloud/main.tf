@@ -1,7 +1,7 @@
 provider "google" {
-  project = "{TFOSS-GCP}"
-  region  = "us-central1"
-  zone    = "us-central1-c"
+  credentials = "${file("account.json")}"
+  project     = "iasa-training"
+  region      = "us-east1"
 }
 
 resource "google_compute_instance" "vm_instance" {
