@@ -1,10 +1,10 @@
 provider "google" {
-  credentials = "${file("account.json")}"
   project     = "iasa-training"
   region      = "us-east1"
 }
 
 resource "google_compute_instance" "vm_instance" {
+  count        = "30"
   name         = "ubuntu1804"
   machine_type = "f1-micro"
 
